@@ -1,3 +1,14 @@
+const galleryImages = [
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg',    caption: 'Delivering love and essentials',     label: 'In the Field'  },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM(1).jpeg', caption: 'Every family deserves support',      label: 'Family Care'   },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg',    caption: 'Care packages for new arrivals',     label: 'Newborn Kits'  },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg',    caption: 'Building stronger communities',      label: 'Community'     },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.32%20PM.jpeg',    caption: 'Supporting mothers across parishes', label: 'Manchester'    },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.33%20PM.jpeg',    caption: 'From Clarendon with care',           label: 'Clarendon'     },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.34%20PM.jpeg',    caption: 'A warm welcome for every newborn',  label: 'St. Elizabeth' },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.36%20PM.jpeg',    caption: 'NbBI — nurturing every beginning',  label: 'Our Mission'   },
+];
+
 export const home = {
   render() {
     return /* html */`
@@ -109,9 +120,7 @@ export const home = {
       </div>
       <div class="mission-visual reveal reveal-delay-2">
         <div class="mission-card">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg" alt="NBBI community" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:28px;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
+          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg" alt="NBBI community work" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:20px;">
           <div class="mission-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
@@ -134,6 +143,43 @@ export const home = {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── Gallery ────────────────────────────────────── -->
+<section class="gallery-section">
+  <div class="gallery-header reveal">
+    <div class="section-label">Our Work</div>
+    <h2>See <em>NbBI</em> in action</h2>
+    <p>Real moments, real families, real impact — across Manchester, Clarendon, and St. Elizabeth.</p>
+  </div>
+  <div class="gallery-carousel-wrap reveal reveal-delay-1">
+    <div class="gallery-overflow">
+      <div class="gallery-track" id="galleryTrack">
+        ${galleryImages.map(img => `
+        <div class="gallery-slide">
+          <img src="${img.src}" alt="${img.caption}" loading="lazy">
+          <div class="gallery-slide-caption">
+            <div class="gallery-caption-text">${img.caption}</div>
+            <div class="gallery-caption-tag">${img.label}</div>
+          </div>
+        </div>`).join('')}
+      </div>
+      <div class="gallery-counter" id="galleryCounter">1 / ${galleryImages.length}</div>
+    </div>
+    <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Previous image">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 14l-5-5 5-5"/>
+      </svg>
+    </button>
+    <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Next image">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 4l5 5-5 5"/>
+      </svg>
+    </button>
+  </div>
+  <div class="gallery-dots" id="galleryDots">
+    ${galleryImages.map((_, i) => `<button class="gallery-dot${i === 0 ? ' active' : ''}" aria-label="Go to image ${i + 1}"></button>`).join('')}
   </div>
 </section>
 
@@ -198,5 +244,43 @@ export const home = {
     `;
   },
 
-  init() {}
+  init() {
+    const track   = document.getElementById('galleryTrack');
+    const counter = document.getElementById('galleryCounter');
+    const dots    = document.querySelectorAll('.gallery-dot');
+    const total   = galleryImages.length;
+    let current   = 0;
+    let timer;
+
+    function goTo(idx) {
+      current = ((idx % total) + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      counter.textContent = `${current + 1} / ${total}`;
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    document.getElementById('galleryPrev').addEventListener('click', () => { goTo(current - 1); startTimer(); });
+    document.getElementById('galleryNext').addEventListener('click', () => { goTo(current + 1); startTimer(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); startTimer(); }));
+
+    const wrap = document.querySelector('.gallery-overflow');
+    wrap.addEventListener('mouseenter', () => clearInterval(timer));
+    wrap.addEventListener('mouseleave', startTimer);
+
+    let touchStartX = 0;
+    wrap.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; clearInterval(timer); }, { passive: true });
+    wrap.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+      startTimer();
+    }, { passive: true });
+
+    goTo(0);
+    startTimer();
+  }
 };

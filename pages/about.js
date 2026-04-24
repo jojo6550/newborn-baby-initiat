@@ -41,10 +41,7 @@ export const about = {
 
       <div class="mission-visual reveal reveal-delay-2">
         <div class="mission-card">
-          <div class="img-placeholder" style="height:200px;margin-bottom:28px;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            images/gallery/
-          </div>
+          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg" alt="NBBI team delivering care" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:28px;">
           <div class="mission-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
