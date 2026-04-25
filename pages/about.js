@@ -24,7 +24,7 @@ export const about = {
         <p class="mission-body">
           Our mission is to empower communities and provide holistic support to families with newborn babies,
           enabling them to thrive during one of life's most transformative times. Our vision is to alleviate the
-          day-to-day stress for vulnerable expectant mothers by contributing necessities for safe delivery and
+          day-to-day stress for vulnerable expectant mothers by providing necessities for safe delivery and
           healthy early development.
         </p>
         <p class="mission-body">
@@ -34,7 +34,7 @@ export const about = {
         <ul class="mission-list">
           <li><span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>Newborn clothing, formula, and diapers for families in need</li>
           <li><span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>Medical screenings and emotional support for new mothers</li>
-          <li><span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>Referrals through nurses, health centres, hospitals &amp; churches</li>
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>Referrals through nurses, health centres, hospitals, and churches</li>
           <li><span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>Supporting low-income, single, and teenage parents</li>
         </ul>
       </div>

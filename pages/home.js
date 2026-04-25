@@ -107,7 +107,7 @@ export const home = {
           </li>
           <li>
             <span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>
-            Referrals through nurses, health centres, hospitals &amp; churches
+            Referrals through nurses, health centres, hospitals, and churches
           </li>
           <li>
             <span class="check-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5L8 3"/></svg></span>
@@ -210,7 +210,7 @@ export const home = {
       </div>
       <div class="testimonial-card reveal reveal-delay-3">
         <div class="testimonial-stars">${'<div class="star"></div>'.repeat(5)}</div>
-        <div class="testimonial-quote">"The initiative supported my twin girls with clothing and essentials. Their work is God-sent for families like mine."</div>
+        <div class="testimonial-quote">"The initiative supported my twin girls with clothing and essentials. Their work is a godsend for families like mine."</div>
         <div class="testimonial-author">
           <div class="author-avatar">D</div>
           <div><div class="author-name">Diane W.</div><div class="author-role">St. Elizabeth Parish</div></div>
