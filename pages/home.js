@@ -56,7 +56,7 @@ export const home = {
     <div style="position:relative;">
       <div class="hero-card-main">
         <div class="hero-card-img">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg" alt="NbBI family" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg" alt="NbBI family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
           <div class="hero-card-badge">New Arrivals</div>
         </div>
         <div class="hero-card-title">Welcome to NbBI</div>

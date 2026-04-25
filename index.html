@@ -3,9 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Newborn Baby Initiative — supporting newborn babies and their families in Manchester, Clarendon, and St. Elizabeth, Jamaica.">
-  <title>Newborn Baby Initiative — Nurturing Every Beginning</title>
+  <meta name="theme-color" content="#C47B55">
 
+  <!-- Primary SEO -->
+  <title>Newborn Baby Initiative Jamaica | NbBI — Nurturing Every Beginning</title>
+  <meta name="description" content="Supporting newborn babies and families in Manchester, Clarendon &amp; St. Elizabeth, Jamaica. We provide essentials, formula, diapers and care. Every donation helps. Give today.">
+  <meta name="keywords" content="newborn support Jamaica, baby initiative Jamaica, NbBI, newborn baby initiative, Manchester Jamaica, Clarendon Jamaica, St Elizabeth Jamaica, donate Jamaica charity">
+  <link rel="canonical" href="https://jojo6550.github.io/newborn-baby-initiat/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Newborn Baby Initiative">
+  <meta property="og:title"       content="Newborn Baby Initiative Jamaica | NbBI">
+  <meta property="og:description" content="Supporting newborn babies and families in Manchester, Clarendon &amp; St. Elizabeth, Jamaica with essentials, formula and care. Donate today.">
+  <meta property="og:url"         content="https://jojo6550.github.io/newborn-baby-initiat/">
+  <meta property="og:image"       content="https://jojo6550.github.io/newborn-baby-initiat/images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg">
+  <meta property="og:image:alt"   content="NbBI team delivering newborn care packages in Jamaica">
+  <meta property="og:locale"      content="en_JM">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Newborn Baby Initiative Jamaica | NbBI">
+  <meta name="twitter:description" content="Supporting newborn babies and families in Manchester, Clarendon &amp; St. Elizabeth, Jamaica. Donate essentials and care today.">
+  <meta name="twitter:image"       content="https://jojo6550.github.io/newborn-baby-initiat/images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Newborn Baby Initiative",
+    "alternateName": "NbBI",
+    "description": "Supporting newborn babies and their families in Manchester, Clarendon, and St. Elizabeth, Jamaica with essentials, formula, diapers and care.",
+    "url": "https://jojo6550.github.io/newborn-baby-initiat/",
+    "logo": "https://jojo6550.github.io/newborn-baby-initiat/images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg",
+    "telephone": "+18765636391",
+    "email": "newbornbabyinitiative@gmail.com",
+    "sameAs": ["https://www.instagram.com/newbornbabyinitiative"],
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Manchester, Jamaica" },
+      { "@type": "AdministrativeArea", "name": "Clarendon, Jamaica" },
+      { "@type": "AdministrativeArea", "name": "St. Elizabeth, Jamaica" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+18765636391",
+      "email": "newbornbabyinitiative@gmail.com",
+      "contactType": "customer support",
+      "areaServed": "JM",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +73,7 @@
         <div class="nav-logo-tag">Nurturing Every Beginning</div>
       </a>
 
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links" id="navLinks" role="list">
         <li><a href="#/"         data-nav>Home</a></li>
         <li><a href="#/about"    data-nav>About</a></li>
         <li><a href="#/programs" data-nav>Programs</a></li>
@@ -30,7 +81,7 @@
         <li><a href="#/donate"   data-nav class="nav-cta">Donate Now</a></li>
       </ul>
 
-      <button class="nav-burger" id="navBurger" aria-label="Toggle navigation">
+      <button class="nav-burger" id="navBurger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -38,10 +89,10 @@
 </nav>
 
 <!-- ── Router outlet ────────────────────────────── -->
-<main id="app"></main>
+<main id="app" role="main"></main>
 
 <!-- ── Footer ───────────────────────────────────── -->
-<footer>
+<footer role="contentinfo">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
@@ -51,7 +102,7 @@
       </div>
       <div>
         <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
+        <ul class="footer-links" role="list">
           <li><a href="#/">Home</a></li>
           <li><a href="#/about">About NBBI</a></li>
           <li><a href="#/programs">Programs</a></li>
@@ -60,17 +111,17 @@
       </div>
       <div>
         <div class="footer-col-title">Donate</div>
-        <ul class="footer-links">
+        <ul class="footer-links" role="list">
           <li><a href="#/donate">Give a Custom Amount</a></li>
           <li><a href="#/donate">Donate via PayPal</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Reach Us</div>
-        <ul class="footer-links">
+        <ul class="footer-links" role="list">
           <li><a href="tel:+18765636391">876-563-6391</a></li>
           <li><a href="mailto:newbornbabyinitiative@gmail.com">Email Us</a></li>
-          <li><a href="https://instagram.com/newbornbabyinitiative" target="_blank" rel="noopener">@newbornbabyinitiative</a></li>
+          <li><a href="https://instagram.com/newbornbabyinitiative" target="_blank" rel="noopener noreferrer">@newbornbabyinitiative</a></li>
         </ul>
       </div>
     </div>

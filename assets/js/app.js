@@ -69,8 +69,9 @@ window.addEventListener('scroll', () => {
 
 // Burger toggle
 burger.addEventListener('click', () => {
-  links.classList.toggle('open');
-  burger.classList.toggle('open');
+  const open = links.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
 });
 
 // Close mobile nav on any link click

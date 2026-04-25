@@ -74,7 +74,7 @@ export const about = {
       <div class="section-label" style="justify-content:center;">Our Values</div>
       <h2>What drives <em>everything</em> we do</h2>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+    <div class="values-grid">
       ${[
         ['Compassion', 'We approach every family with empathy, dignity, and genuine care — because every mother and child deserves to be seen.', '#C47B55'],
         ['Integrity',  'Every donation goes where we say it goes. Full transparency, zero overhead waste. Families first, always.', '#8FA688'],
