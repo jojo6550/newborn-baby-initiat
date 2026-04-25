@@ -1,36 +1,59 @@
-// PayPal donation config — update BUSINESS_EMAIL and RETURN_BASE to match your setup
-const BUSINESS_EMAIL = 'newbornbabyinitiative@gmail.com';
-const RETURN_BASE     = 'https://jojo6550.github.io/newborn-baby-initiat';
+// To go live: replace YOUR_CLIENT_ID with your Live Client ID from developer.paypal.com
+// Sandbox Client ID (for testing without real money) also available at developer.paypal.com
+const CLIENT_ID = 'YOUR_CLIENT_ID';
+const SDK_URL   = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&currency=USD&intent=capture&enable-funding=card&disable-funding=venmo`;
 
-/**
- * Build a PayPal donation URL that redirects back to the site after payment.
- * @param {number|string} amount  - Pre-filled amount (USD). '' for open amount.
- * @param {string}        itemName - Description shown on PayPal receipt.
- */
-export function paypalUrl(amount = '', itemName = 'NBBI Donation') {
-  const params = new URLSearchParams({
-    cmd:           '_donations',
-    business:      BUSINESS_EMAIL,
-    item_name:     itemName,
-    currency_code: 'USD',
-    return:        `${RETURN_BASE}/#/thank-you`,
-    cancel_return: `${RETURN_BASE}/#/donate`,
-    no_shipping:   '1',
+let sdkLoaded = false;
+
+function loadSdk() {
+  if (sdkLoaded || document.querySelector('[data-paypal-sdk]')) {
+    return Promise.resolve();
+  }
+  return new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = SDK_URL;
+    s.dataset.paypalSdk = '';
+    s.onload = () => { sdkLoaded = true; res(); };
+    s.onerror = rej;
+    document.head.appendChild(s);
   });
-  if (amount) params.set('amount', String(amount));
-  return `https://www.paypal.com/cgi-bin/webscr?${params}`;
 }
 
-/**
- * Wire up all [data-paypal] elements on the page.
- * Usage in HTML: <a data-paypal data-amount="25" data-item="Seedling Gift">Donate</a>
- */
-export function initPaypalButtons() {
-  document.querySelectorAll('[data-paypal]').forEach(el => {
-    const amount = el.dataset.amount || '';
-    const item   = el.dataset.item   || 'NBBI Donation';
-    el.href   = paypalUrl(amount, item);
-    el.target = '_blank';
-    el.rel    = 'noopener noreferrer';
-  });
+export async function initPaypalButtons(getAmount) {
+  try {
+    await loadSdk();
+  } catch {
+    const c = document.getElementById('paypal-button-container');
+    if (c) c.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">Could not load PayPal. Check your connection and refresh.</p>';
+    return;
+  }
+
+  const container = document.getElementById('paypal-button-container');
+  if (!container) return;
+  container.innerHTML = '';
+
+  paypal.Buttons({
+    style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'donate' },
+    createOrder: (data, actions) => {
+      const amount = parseFloat(getAmount());
+      if (!amount || amount < 1) {
+        return Promise.reject(new Error('invalid-amount'));
+      }
+      return actions.order.create({
+        purchase_units: [{
+          amount: { value: amount.toFixed(2), currency_code: 'USD' },
+          description: 'NBBI Donation'
+        }]
+      });
+    },
+    onApprove: (data, actions) => actions.order.capture().then(() => {
+      window.location.hash = '/thank-you';
+    }),
+    onCancel: () => {},
+    onError: (err) => {
+      console.error('PayPal error', err);
+      const c = document.getElementById('paypal-button-container');
+      if (c) c.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">Payment failed. Please try again or contact us.</p>';
+    }
+  }).render('#paypal-button-container');
 }
