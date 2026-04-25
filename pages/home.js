@@ -5,7 +5,6 @@ const galleryImages = [
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg',    caption: 'Building stronger communities',      label: 'Community'     },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%207.08.31%20PM.jpeg',    caption: 'Supporting mothers across parishes', label: 'Manchester'    },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.33%20PM.jpeg',    caption: 'From Clarendon with care',           label: 'Clarendon'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.34%20PM.jpeg',    caption: 'A warm welcome for every newborn',  label: 'St. Elizabeth' },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.36%20PM.jpeg',    caption: 'NBBI — nurturing every beginning',  label: 'Our Mission'   },
 ];
 
