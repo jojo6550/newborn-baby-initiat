@@ -92,7 +92,7 @@ export const home = {
         <div class="section-label">About Us</div>
         <h2>Committed to every <em>newborn's</em> bright beginning</h2>
         <p class="mission-body">
-          Jamaica faces significant challenges for newborns and their families. Thousands face difficulties ranging from lack
+          Jamaica faces significant challenges for newborns and their families. Thousands face difficulties ranging from a lack
           of essential medical care and supplies to inadequate nutrition and unstable living conditions. NBBI seeks to address
           these issues by providing critical resources to mothers and families during the first crucial months of a baby's life.
         </p>
