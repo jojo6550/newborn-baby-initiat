@@ -3,4 +3,3 @@ node_modules/
 .vscode/
 jsconfig.json
 .remember/
-assets/js/config.js
