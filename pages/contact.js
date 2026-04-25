@@ -19,7 +19,7 @@ export const contact = {
         <div class="section-label">Reach Us</div>
         <h2>Let's start a <em>conversation</em></h2>
         <p class="contact-info-text">
-          Interested in learning more about NBBI, want to contribute, or looking to refer a family?
+          Interested in learning more about NBBI, wanting to contribute, or looking to refer a family?
           Reach out — we're here and we respond promptly.
         </p>
         <div class="contact-methods">

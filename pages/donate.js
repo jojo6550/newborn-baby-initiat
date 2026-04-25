@@ -54,6 +54,8 @@ export const donate = {
             id="customAmount"
             type="number"
             min="1"
+            max="25000"
+            step="0.01"
             placeholder="0.00"
             style="
               width:100%;
@@ -94,6 +96,7 @@ export const donate = {
           >$${v}</button>`).join('')}
         </div>
 
+        <p id="paypal-error-msg" style="display:none;color:red;font-size:13px;text-align:center;margin-bottom:12px;line-height:1.5;"></p>
         <div id="paypal-button-container" style="min-height:55px;margin-top:8px;"></div>
 
         <p style="font-size:12px;color:var(--muted-brown);margin-top:20px;line-height:1.6;">

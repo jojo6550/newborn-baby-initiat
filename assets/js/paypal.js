@@ -1,6 +1,7 @@
 import { PAYPAL_CLIENT_ID } from './config.js';
 
 const SDK_URL = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&currency=USD&intent=capture&enable-funding=card&disable-funding=venmo`;
+const MAX_AMOUNT = 25000;
 
 let sdkPromise = null;
 
@@ -21,30 +22,48 @@ function loadSdk() {
   return sdkPromise;
 }
 
+function showError(msg) {
+  const el = document.getElementById('paypal-error-msg');
+  if (el) {
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+}
+
+function clearError() {
+  const el = document.getElementById('paypal-error-msg');
+  if (el) {
+    el.textContent = '';
+    el.style.display = 'none';
+  }
+}
+
 export async function initPaypalButtons(getAmount) {
+  const container = document.getElementById('paypal-button-container');
+
   try {
+    if (container) container.innerHTML = '<p style="text-align:center;color:var(--muted-brown);font-size:13px;padding:12px 0;">Loading payment options…</p>';
     await loadSdk();
   } catch {
-    const c = document.getElementById('paypal-button-container');
-    if (c) c.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">Could not load PayPal. Check your connection and refresh.</p>';
+    if (container) container.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">Could not load PayPal. Check your connection and refresh.</p>';
     return;
   }
 
   if (typeof window.paypal === 'undefined') {
-    const c = document.getElementById('paypal-button-container');
-    if (c) c.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">PayPal unavailable. Check Client ID configuration.</p>';
+    if (container) container.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">PayPal unavailable. Check Client ID configuration.</p>';
     return;
   }
 
-  const container = document.getElementById('paypal-button-container');
   if (!container) return;
   container.innerHTML = '';
 
   paypal.Buttons({
     style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'donate' },
     createOrder: (data, actions) => {
-      const amount = parseFloat(getAmount());
-      if (!amount || amount < 1) {
+      clearError();
+      const raw = getAmount();
+      const amount = parseFloat(raw);
+      if (!amount || isNaN(amount) || amount < 1 || amount > MAX_AMOUNT) {
         return Promise.reject(new Error('invalid-amount'));
       }
       return actions.order.create({
@@ -55,17 +74,18 @@ export async function initPaypalButtons(getAmount) {
       });
     },
     onApprove: (data, actions) => actions.order.capture()
-      .then(() => { window.location.hash = '/thank-you'; })
+      .then(() => {
+        sessionStorage.setItem('nbbi_donated', '1');
+        window.location.hash = '/thank-you';
+      })
       .catch(() => {
-        const c = document.getElementById('paypal-button-container');
-        if (c) c.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">Payment captured but confirmation failed. Contact us at newbornbabyinitiative@gmail.com.</p>';
+        showError('Payment was not completed. No charge was made. Please try again or contact newbornbabyinitiative@gmail.com.');
       }),
-    onCancel: () => {},
+    onCancel: () => { clearError(); },
     onError: (err) => {
       if (err?.message === 'invalid-amount') return;
       console.error('PayPal error', err);
-      const c = document.getElementById('paypal-button-container');
-      if (c) c.innerHTML = '<p style="color:red;text-align:center;font-size:13px;">Payment failed. Please try again or contact us.</p>';
+      showError('Payment failed. Please try again or contact newbornbabyinitiative@gmail.com.');
     }
   }).render('#paypal-button-container');
 }

@@ -42,5 +42,11 @@ export const thankYou = {
     `;
   },
 
-  init() {}
+  init() {
+    if (!sessionStorage.getItem('nbbi_donated')) {
+      window.location.hash = '/donate';
+      return;
+    }
+    sessionStorage.removeItem('nbbi_donated');
+  }
 };
