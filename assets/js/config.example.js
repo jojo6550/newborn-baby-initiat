@@ -6,3 +6,7 @@
 export const PAYPAL_CLIENT_ID = 'YOUR_CLIENT_ID';
 // Sandbox ID for testing: get from developer.paypal.com → Apps & Credentials → Sandbox tab
 // Live ID for production: get from developer.paypal.com → Apps & Credentials → Live tab
+
+export const TILOPAY_API_KEY = 'YOUR_TILOPAY_SDK_TOKEN';
+// Get your SDK token from: tilopay.com/developers → GetTokenSdk API call
+// This is the session token returned by the GetTokenSdk endpoint, NOT your admin password

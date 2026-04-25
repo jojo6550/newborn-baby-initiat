@@ -14,6 +14,7 @@ jobs:
       - name: Create config.js from secret
         run: |
           echo "export const PAYPAL_CLIENT_ID = '${{ secrets.PAYPAL_CLIENT_ID }}';" > assets/js/config.js
+          echo "export const TILOPAY_API_KEY = '${{ secrets.TILOPAY_API_KEY }}';" >> assets/js/config.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
