@@ -15,6 +15,7 @@ jobs:
         run: |
           echo "export const PAYPAL_CLIENT_ID = '${{ secrets.PAYPAL_CLIENT_ID }}';" > assets/js/config.js
           echo "export const TILOPAY_API_KEY = '${{ secrets.TILOPAY_API_KEY }}';" >> assets/js/config.js
+          sed -i '/assets\/js\/config\.js/d' .gitignore
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
