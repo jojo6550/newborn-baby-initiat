@@ -53,7 +53,7 @@ export const contact = {
             </div>
             <div>
               <div class="contact-method-label">Instagram</div>
-              <a href="https://instagram.com/newbornbabyinitiative" target="_blank" rel="noopener" class="contact-method-value">@newbornbabyinitiative</a>
+              <a href="https://www.instagram.com/newbornbabyinitiative?utm_source=qr&igsh=dmhvdDlkN2tjMDR6" target="_blank" rel="noopener noreferrer" class="contact-method-value">@newbornbabyinitiative</a>
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ export const thankYou = {
     </div>
 
     <div style="border-top:1px solid var(--cream-deep);padding-top:32px;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
-      <a href="https://instagram.com/newbornbabyinitiative" target="_blank" rel="noopener"
+      <a href="https://www.instagram.com/newbornbabyinitiative?utm_source=qr&igsh=dmhvdDlkN2tjMDR6" target="_blank" rel="noopener noreferrer"
          style="font-size:13px;font-weight:600;color:var(--terracotta);text-decoration:underline;text-underline-offset:3px;">
         Follow us on Instagram
       </a>

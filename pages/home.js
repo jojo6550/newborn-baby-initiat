@@ -3,10 +3,10 @@ const galleryImages = [
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM(1).jpeg', caption: 'Every family deserves support',      label: 'Family Care'   },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg',    caption: 'Care packages for new arrivals',     label: 'Newborn Kits'  },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg',    caption: 'Building stronger communities',      label: 'Community'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.32%20PM.jpeg',    caption: 'Supporting mothers across parishes', label: 'Manchester'    },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%207.08.31%20PM.jpeg',    caption: 'Supporting mothers across parishes', label: 'Manchester'    },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.33%20PM.jpeg',    caption: 'From Clarendon with care',           label: 'Clarendon'     },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.34%20PM.jpeg',    caption: 'A warm welcome for every newborn',  label: 'St. Elizabeth' },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.36%20PM.jpeg',    caption: 'NbBI — nurturing every beginning',  label: 'Our Mission'   },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.36%20PM.jpeg',    caption: 'NBBI — nurturing every beginning',  label: 'Our Mission'   },
 ];
 
 export const home = {
@@ -46,7 +46,7 @@ export const home = {
         <div class="stat-label">Goes to Families</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">NbBI</div>
+        <div class="stat-num">NBBI</div>
         <div class="stat-label">Est. Central Jamaica</div>
       </div>
     </div>
@@ -56,10 +56,10 @@ export const home = {
     <div style="position:relative;">
       <div class="hero-card-main">
         <div class="hero-card-img">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg" alt="NbBI family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
+          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg" alt="NBBI family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
           <div class="hero-card-badge">New Arrivals</div>
         </div>
-        <div class="hero-card-title">Welcome to NbBI</div>
+        <div class="hero-card-title">Welcome to NBBI</div>
         <div class="hero-card-text">A dedicated team offering wholesome service to new mothers, parents, and their newborn babies across Central Jamaica.</div>
         <div class="hero-card-tag">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
@@ -150,7 +150,7 @@ export const home = {
 <section class="gallery-section">
   <div class="gallery-header reveal">
     <div class="section-label">Our Work</div>
-    <h2>See <em>NbBI</em> in action</h2>
+    <h2>See <em>NBBI</em> in action</h2>
     <p>Real moments, real families, real impact — across Manchester, Clarendon, and St. Elizabeth.</p>
   </div>
   <div class="gallery-carousel-wrap reveal reveal-delay-1">
@@ -185,7 +185,7 @@ export const home = {
 
 <!-- ── Testimonials ──────────────────────────────── -->
 <section class="testimonials">
-  <div class="testimonials-bg">NbBI</div>
+  <div class="testimonials-bg">NBBI</div>
   <div class="container">
     <div class="testimonials-header reveal">
       <div class="section-label" style="justify-content:center;">Voices</div>
