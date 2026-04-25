@@ -1,4 +1,4 @@
-import { paypalUrl } from '../assets/js/paypal.js';
+import { initPaypalButtons } from '../assets/js/paypal.js';
 
 export const donate = {
   render() {
@@ -94,12 +94,7 @@ export const donate = {
           >$${v}</button>`).join('')}
         </div>
 
-        <button id="customDonateBtn" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:18px 24px;">
-          Donate via PayPal
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;">
-            <path d="M3 8h10M9 4l4 4-4 4"/>
-          </svg>
-        </button>
+        <div id="paypal-button-container" style="min-height:55px;margin-top:8px;"></div>
 
         <p style="font-size:12px;color:var(--muted-brown);margin-top:20px;line-height:1.6;">
           Securely processed by PayPal &middot; 100% goes to families
@@ -113,9 +108,8 @@ export const donate = {
   },
 
   init() {
-    const input  = document.getElementById('customAmount');
-    const btn    = document.getElementById('customDonateBtn');
-    const qBtns  = document.querySelectorAll('.quick-amount-btn');
+    const input = document.getElementById('customAmount');
+    const qBtns = document.querySelectorAll('.quick-amount-btn');
 
     qBtns.forEach(b => {
       b.addEventListener('mouseenter', () => {
@@ -145,10 +139,15 @@ export const donate = {
       });
     });
 
-    btn?.addEventListener('click', () => {
-      const amount = input?.value;
-      if (!amount || Number(amount) < 1) { input?.focus(); return; }
-      window.open(paypalUrl(amount, 'NBBI Custom Donation'), '_blank', 'noopener,noreferrer');
+    initPaypalButtons(() => {
+      const v = input?.value;
+      if (!v || Number(v) < 1) {
+        input?.focus();
+        input?.style.setProperty('border-color', 'var(--terracotta)');
+        setTimeout(() => input?.style.setProperty('border-color', 'var(--cream-deep)'), 1200);
+        return '';
+      }
+      return v;
     });
   }
 };
