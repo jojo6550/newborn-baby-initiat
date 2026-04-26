@@ -1,6 +1,6 @@
 import { STRIPE_PAYMENT_LINK } from './config.js';
 
-const MAX_AMOUNT = 25000;
+const MAX_AMOUNT = 10000;
 
 function showError(msg) {
   const el = document.getElementById('stripe-error-msg');
