@@ -14,7 +14,7 @@ jobs:
       - name: Create config.js from secret
         run: |
           echo "export const PAYPAL_CLIENT_ID = '${{ secrets.PAYPAL_CLIENT_ID }}';" > assets/js/config.js
-          echo "export const TILOPAY_API_KEY = '${{ secrets.TILOPAY_API_KEY }}';" >> assets/js/config.js
+          echo "export const STRIPE_PAYMENT_LINK = '${{ secrets.STRIPE_PAYMENT_LINK }}';" >> assets/js/config.js
           sed -i '/assets\/js\/config\.js/d' .gitignore
 
       - name: Deploy to GitHub Pages
