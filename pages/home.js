@@ -244,13 +244,6 @@ export const home = {
       </div>
       <div class="proceeds-item reveal reveal-delay-2">
         <div class="proceeds-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 17h20"/><path d="M6 20h12"/></svg>
-        </div>
-        <div class="proceeds-title">Laptops & Phones</div>
-        <div class="proceeds-text">Technology access for parents to support education, communication, and economic opportunities.</div>
-      </div>
-      <div class="proceeds-item reveal reveal-delay-3">
-        <div class="proceeds-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l12 0M6 9l.5 11a2 2 0 0 0 2 1.85h6a2 2 0 0 0 2-1.85l.5-11M6 9l1-3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1l1 3"/><line x1="10" y1="5" x2="10" y2="2"/><line x1="14" y1="5" x2="14" y2="2"/></svg>
         </div>
         <div class="proceeds-title">Food & Nutrition</div>
