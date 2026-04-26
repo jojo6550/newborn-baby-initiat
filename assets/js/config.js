@@ -1,2 +1,2 @@
 export const PAYPAL_CLIENT_ID = 'Afg5TAu6c_QDuGl25-d0Txz7fThD2ToiWGH8MEB5k-w9uFjxjn6U_Dx8mm5iHjHva5Hi2xfcQwlPz27q';
-export const TILOPAY_API_KEY = 'TILOPAY_API_KEY';
+export const STRIPE_PAYMENT_LINK = '';

@@ -1,5 +1,5 @@
 import { initPaypalButtons } from '../assets/js/paypal.js';
-import { preloadTilopaySdk, processTilopayPayment } from '../assets/js/tilopay.js';
+import { processStripePayment } from '../assets/js/stripe.js';
 
 const TAB_ACTIVE = `
   flex:1;padding:10px 0;border-radius:var(--radius-xl);border:1.5px solid var(--terracotta);
@@ -132,17 +132,16 @@ export const donate = {
           <div id="paypal-button-container" style="min-height:55px;margin-top:8px;"></div>
         </div>
 
-        <!-- ── Card panel (Tilopay) ── -->
+        <!-- ── Card panel (Stripe) ── -->
         <div id="panel-card" style="display:none;">
-          <p id="tilopay-error-msg" style="display:none;color:red;font-size:13px;text-align:center;margin-bottom:12px;line-height:1.5;"></p>
+          <p id="stripe-error-msg" style="display:none;color:red;font-size:13px;text-align:center;margin-bottom:12px;line-height:1.5;"></p>
 
-          <!-- Email (required by Tilopay for transaction record) -->
           <div style="margin-bottom:16px;text-align:left;">
-            <label for="tilopay-email" style="${LABEL_STYLE}">Email</label>
+            <label for="stripe-email" style="${LABEL_STYLE}">Email</label>
             <input
               type="email"
-              id="tilopay-email"
-              name="tilopay-email"
+              id="stripe-email"
+              name="stripe-email"
               autocomplete="email"
               placeholder="your@email.com"
               style="${FIELD_STYLE}"
@@ -151,63 +150,8 @@ export const donate = {
             >
           </div>
 
-          <!-- Tilopay required form structure — hidden selects, visible card fields -->
-          <div class="payFormTilopay" style="text-align:left;">
-            <select id="method" name="method" style="display:none;"><option value="">Select method</option></select>
-            <select id="cards" name="cards" style="display:none;"><option value="">Select card</option></select>
-
-            <div style="margin-bottom:16px;">
-              <label for="ccnumber" style="${LABEL_STYLE}">Card Number</label>
-              <input
-                type="text"
-                id="ccnumber"
-                name="ccnumber"
-                autocomplete="cc-number"
-                placeholder="1234 5678 9012 3456"
-                maxlength="19"
-                style="${FIELD_STYLE}"
-                onfocus="this.style.borderColor='var(--terracotta)'"
-                onblur="this.style.borderColor='var(--cream-deep)'"
-              >
-            </div>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
-              <div>
-                <label for="expdate" style="${LABEL_STYLE}">Expiry</label>
-                <input
-                  type="text"
-                  id="expdate"
-                  name="expdate"
-                  autocomplete="cc-exp"
-                  placeholder="MM / YY"
-                  maxlength="7"
-                  style="${FIELD_STYLE}"
-                  onfocus="this.style.borderColor='var(--terracotta)'"
-                  onblur="this.style.borderColor='var(--cream-deep)'"
-                >
-              </div>
-              <div>
-                <label for="cvv" style="${LABEL_STYLE}">CVV</label>
-                <input
-                  type="text"
-                  id="cvv"
-                  name="cvv"
-                  autocomplete="cc-csc"
-                  placeholder="123"
-                  maxlength="4"
-                  style="${FIELD_STYLE}"
-                  onfocus="this.style.borderColor='var(--terracotta)'"
-                  onblur="this.style.borderColor='var(--cream-deep)'"
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Required by Tilopay for 3DS verification flow -->
-          <div id="result"></div>
-
           <button
-            id="tilopay-pay-btn"
+            id="stripe-pay-btn"
             style="
               width:100%;
               padding:16px 24px;
@@ -228,7 +172,7 @@ export const donate = {
         </div>
 
         <p style="font-size:12px;color:var(--muted-brown);margin-top:20px;line-height:1.6;">
-          Securely processed by PayPal &middot; Tilopay &middot; 100% goes to families
+          Securely processed by PayPal &middot; Stripe &middot; 100% goes to families
         </p>
       </div>
 
@@ -274,7 +218,7 @@ export const donate = {
 
     // Update card button text when amount changes
     function updateCardBtnText(val) {
-      const btn = document.getElementById('tilopay-pay-btn');
+      const btn = document.getElementById('stripe-pay-btn');
       if (!btn) return;
       const n = parseFloat(val);
       btn.textContent = n >= 1 ? `Donate $${n % 1 === 0 ? n : n.toFixed(2)} by Card` : 'Donate by Card';
@@ -312,25 +256,13 @@ export const donate = {
 
     tabCard.addEventListener('click', () => {
       setActive(tabCard, tabPaypal, panelCard, panelPaypal);
-      preloadTilopaySdk().catch(() => {}); // warm up SDK; errors surface later on pay click
     });
 
-    // Tilopay pay button
-    document.getElementById('tilopay-pay-btn').addEventListener('click', async () => {
-      const btn = document.getElementById('tilopay-pay-btn');
+    // Stripe pay button
+    document.getElementById('stripe-pay-btn').addEventListener('click', () => {
       const amount = amountInput?.value;
-      const email = document.getElementById('tilopay-email')?.value;
-
-      const originalText = btn.textContent;
-      btn.disabled = true;
-      btn.style.opacity = '0.6';
-      btn.textContent = 'Processing…';
-
-      await processTilopayPayment(amount, email);
-
-      btn.disabled = false;
-      btn.style.opacity = '1';
-      btn.textContent = originalText;
+      const email = document.getElementById('stripe-email')?.value;
+      processStripePayment(amount, email);
     });
 
     // PayPal buttons

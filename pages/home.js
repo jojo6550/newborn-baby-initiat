@@ -18,7 +18,7 @@ export const home = {
 
   <div class="hero-content">
     <div class="hero-eyebrow"><span></span> Newborn Baby Initiative</div>
-    <h1>Give the Gift of <em>Life</em> and Love</h1>
+    <h1>Give the Gift of a <em>Better</em> Life</h1>
     <p class="hero-sub">
       Supporting newborn babies and their families in Manchester, Clarendon, and St. Elizabeth, Jamaica —
       providing essentials for a healthy, happy start to life.
