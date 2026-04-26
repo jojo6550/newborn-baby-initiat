@@ -1,26 +1,5 @@
 import { initPaypalButtons } from '../assets/js/paypal.js';
-import { processStripePayment } from '../assets/js/stripe.js';
 
-const TAB_ACTIVE = `
-  flex:1;padding:10px 0;border-radius:var(--radius-xl);border:1.5px solid var(--terracotta);
-  background:var(--terracotta);font-family:var(--font-body);font-size:13px;font-weight:700;
-  color:#fff;cursor:pointer;transition:all var(--transition);letter-spacing:0.03em;
-`;
-const TAB_INACTIVE = `
-  flex:1;padding:10px 0;border-radius:var(--radius-xl);border:1.5px solid var(--cream-deep);
-  background:transparent;font-family:var(--font-body);font-size:13px;font-weight:700;
-  color:var(--mid-brown);cursor:pointer;transition:all var(--transition);letter-spacing:0.03em;
-`;
-const FIELD_STYLE = `
-  width:100%;padding:13px 16px;font-size:15px;font-family:var(--font-body);
-  color:var(--warm-brown);background:var(--cream);border:2px solid var(--cream-deep);
-  border-radius:var(--radius-md);outline:none;transition:border-color var(--transition);
-  box-sizing:border-box;-moz-appearance:textfield;
-`;
-const LABEL_STYLE = `
-  display:block;font-size:11px;font-weight:700;letter-spacing:0.07em;
-  text-transform:uppercase;color:var(--mid-brown);margin-bottom:6px;
-`;
 
 export const donate = {
   render() {
@@ -66,13 +45,7 @@ export const donate = {
           No tiers, no minimums — just a direct gift to families who need it most.
         </p>
 
-        <!-- Payment method tabs -->
-        <div style="display:flex;gap:8px;margin-bottom:28px;">
-          <button id="tab-paypal" style="${TAB_ACTIVE}">PayPal</button>
-          <button id="tab-card" style="${TAB_INACTIVE}">Pay by Card</button>
-        </div>
-
-        <!-- Amount input (shared between both tabs) -->
+        <!-- Amount input -->
         <div style="position:relative;margin-bottom:20px;">
           <span style="
             position:absolute;left:20px;top:50%;transform:translateY(-50%);
@@ -126,53 +99,14 @@ export const donate = {
           >$${v}</button>`).join('')}
         </div>
 
-        <!-- ── PayPal panel ── -->
+        <!-- PayPal + card buttons -->
         <div id="panel-paypal">
           <p id="paypal-error-msg" style="display:none;color:red;font-size:13px;text-align:center;margin-bottom:12px;line-height:1.5;"></p>
           <div id="paypal-button-container" style="min-height:55px;margin-top:8px;"></div>
         </div>
 
-        <!-- ── Card panel (Stripe) ── -->
-        <div id="panel-card" style="display:none;">
-          <p id="stripe-error-msg" style="display:none;color:red;font-size:13px;text-align:center;margin-bottom:12px;line-height:1.5;"></p>
-
-          <div style="margin-bottom:16px;text-align:left;">
-            <label for="stripe-email" style="${LABEL_STYLE}">Email</label>
-            <input
-              type="email"
-              id="stripe-email"
-              name="stripe-email"
-              autocomplete="email"
-              placeholder="your@email.com"
-              style="${FIELD_STYLE}"
-              onfocus="this.style.borderColor='var(--terracotta)'"
-              onblur="this.style.borderColor='var(--cream-deep)'"
-            >
-          </div>
-
-          <button
-            id="stripe-pay-btn"
-            style="
-              width:100%;
-              padding:16px 24px;
-              background:var(--terracotta);
-              color:#fff;
-              border:none;
-              border-radius:var(--radius-md);
-              font-family:var(--font-body);
-              font-size:15px;
-              font-weight:700;
-              letter-spacing:0.03em;
-              cursor:pointer;
-              transition:opacity var(--transition);
-            "
-            onmouseover="this.style.opacity='0.88'"
-            onmouseout="this.style.opacity='1'"
-          >Donate by Card</button>
-        </div>
-
         <p style="font-size:12px;color:var(--muted-brown);margin-top:20px;line-height:1.6;">
-          Securely processed by PayPal &middot; Stripe &middot; 100% goes to families
+          Securely processed by PayPal &middot; 100% goes to families
         </p>
       </div>
 
@@ -212,21 +146,10 @@ export const donate = {
         b.style.borderColor = 'var(--terracotta)';
         b.style.color = '#fff';
         amountInput.value = b.dataset.val;
-        updateCardBtnText(b.dataset.val);
       });
     });
 
-    // Update card button text when amount changes
-    function updateCardBtnText(val) {
-      const btn = document.getElementById('stripe-pay-btn');
-      if (!btn) return;
-      const n = parseFloat(val);
-      btn.textContent = n >= 1 ? `Donate $${n % 1 === 0 ? n : n.toFixed(2)} by Card` : 'Donate by Card';
-    }
-
     amountInput?.addEventListener('input', () => {
-      updateCardBtnText(amountInput.value);
-      // deselect quick-amount buttons when user types manually
       qBtns.forEach(x => {
         if (x.dataset.active === 'true') {
           x.dataset.active = 'false';
@@ -235,34 +158,6 @@ export const donate = {
           x.style.color = 'var(--mid-brown)';
         }
       });
-    });
-
-    // Tab switching
-    const tabPaypal = document.getElementById('tab-paypal');
-    const tabCard = document.getElementById('tab-card');
-    const panelPaypal = document.getElementById('panel-paypal');
-    const panelCard = document.getElementById('panel-card');
-
-    function setActive(activeTab, inactiveTab, showPanel, hidePanel) {
-      activeTab.style.cssText = TAB_ACTIVE;
-      inactiveTab.style.cssText = TAB_INACTIVE;
-      showPanel.style.display = '';
-      hidePanel.style.display = 'none';
-    }
-
-    tabPaypal.addEventListener('click', () => {
-      setActive(tabPaypal, tabCard, panelPaypal, panelCard);
-    });
-
-    tabCard.addEventListener('click', () => {
-      setActive(tabCard, tabPaypal, panelCard, panelPaypal);
-    });
-
-    // Stripe pay button
-    document.getElementById('stripe-pay-btn').addEventListener('click', () => {
-      const amount = amountInput?.value;
-      const email = document.getElementById('stripe-email')?.value;
-      processStripePayment(amount, email);
     });
 
     // PayPal buttons

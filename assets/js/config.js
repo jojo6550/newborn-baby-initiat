@@ -1,2 +1,1 @@
-export const PAYPAL_CLIENT_ID = '';
-export const STRIPE_PAYMENT_LINK = 'https://donate.stripe.com/test_8x214o3f77R6dcU5k50x200';
+export const PAYPAL_CLIENT_ID = 'Afg5TAu6c_QDuGl25-d0Txz7fThD2ToiWGH8MEB5k-w9uFjxjn6U_Dx8mm5iHjHva5Hi2xfcQwlPz27q';
