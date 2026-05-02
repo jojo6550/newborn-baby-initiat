@@ -1,10 +1,10 @@
 const galleryImages = [
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg',    caption: 'Delivering love and essentials',     label: 'In the Field'  },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM(1).jpeg', caption: 'Every family deserves support',      label: 'Family Care'   },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg',    caption: 'Care packages for new arrivals',     label: 'Newborn Kits'  },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg',    caption: 'Delivering love and essentials',     label: 'St. Elizabeth'  },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM(1).jpeg', caption: 'Every family deserves support',      label: 'St. Elizabeth'   },
+  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg',    caption: 'Care packages for new arrivals',     label: 'Manchester'  },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg',    caption: 'Building stronger communities',      label: 'Community'     },
   { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.33%20PM.jpeg',    caption: 'From Clarendon with care',           label: 'Clarendon'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.37.07%20PM.jpeg',    caption: 'Giving to those in need',            label: 'Donations'     },
+  { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.37.07%20PM.jpeg',    caption: 'Giving to those in need',            label: 'Clarendon'     },
   { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.37.07%20PM-1.jpeg',  caption: 'Supporting families in crisis',       label: 'Relief'       },
   { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.44.47%20PM.jpeg',    caption: 'Compassion in action',               label: 'Community Care'},
 ];
