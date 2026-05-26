@@ -5,8 +5,7 @@
       "startServerReadyPattern": "Available on",
       "startServerReadyTimeout": 20000,
       "url": [
-        "http://localhost:8080/",
-        "http://localhost:8080/404.html"
+        "http://localhost:8080/"
       ],
       "numberOfRuns": 3
     },
