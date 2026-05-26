@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   # ── 1. VALIDATE ──────────────────────────────────────────────────────────────
   validate:
@@ -50,7 +53,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Copy site to _site
         run: |
@@ -63,6 +66,7 @@ jobs:
             --exclude='scripts' \
             --exclude='docs' \
             --exclude='hooks' \
+            --exclude='.claude' \
             --exclude='package.json' \
             --exclude='package-lock.json' \
             --exclude='lighthouserc.json' \
@@ -105,6 +109,8 @@ jobs:
   deploy:
     needs: lighthouse
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - name: Download site artifact

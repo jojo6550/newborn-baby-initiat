@@ -4,3 +4,4 @@ node_modules/
 jsconfig.json
 .remember/
 .gitignore
+.claude/
