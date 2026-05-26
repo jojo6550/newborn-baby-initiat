@@ -1,11 +1,12 @@
 const galleryImages = [
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg',    caption: 'Delivering love and essentials',     label: 'In the Field'  },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM(1).jpeg', caption: 'Every family deserves support',      label: 'Family Care'   },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg',    caption: 'Care packages for new arrivals',     label: 'Newborn Kits'  },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg',    caption: 'Building stronger communities',      label: 'Community'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%207.08.31%20PM.jpeg',    caption: 'Supporting mothers across parishes', label: 'Manchester'    },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.33%20PM.jpeg',    caption: 'From Clarendon with care',           label: 'Clarendon'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.36%20PM.jpeg',    caption: 'NBBI — nurturing every beginning',  label: 'Our Mission'   },
+  { src: 'images/gallery/gallery-01.jpeg', caption: 'Delivering love and essentials',  label: 'St. Elizabeth'  },
+  { src: 'images/gallery/gallery-02.jpeg', caption: 'Every family deserves support',   label: 'St. Elizabeth'  },
+  { src: 'images/gallery/gallery-03.jpeg', caption: 'Care packages for new arrivals',  label: 'Manchester'     },
+  { src: 'images/gallery/gallery-04.jpeg', caption: 'Building stronger communities',   label: 'Community'      },
+  { src: 'images/gallery/gallery-05.jpeg', caption: 'From Clarendon with care',        label: 'Clarendon'      },
+  { src: 'images/gallery/gallery-08.jpeg', caption: 'Giving to those in need',         label: 'Clarendon'      },
+  { src: 'images/gallery/gallery-09.jpeg', caption: 'Supporting families in crisis',   label: 'Relief'         },
+  { src: 'images/gallery/gallery-10.jpeg', caption: 'Compassion in action',            label: 'Community Care' },
 ];
 
 export const home = {
@@ -17,7 +18,7 @@ export const home = {
   <div class="hero-bg-blob hero-bg-blob-2"></div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow"><span></span> Newborn Baby Initiative</div>
+    <div class="hero-eyebrow"><span></span> Newborn Initiative</div>
     <h1>Give the Gift of a <em>Better</em> Life</h1>
     <p class="hero-sub">
       Supporting newborn babies and their families in Manchester, Clarendon, and St. Elizabeth, Jamaica —
@@ -55,7 +56,7 @@ export const home = {
     <div style="position:relative;">
       <div class="hero-card-main">
         <div class="hero-card-img">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg" alt="NBBI family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
+          <img src="images/gallery/gallery-01.jpeg" alt="Newborn Initiative family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
           <div class="hero-card-badge">New Arrivals</div>
         </div>
         <div class="hero-card-title">Welcome to NBBI</div>
@@ -119,7 +120,7 @@ export const home = {
       </div>
       <div class="mission-visual reveal reveal-delay-2">
         <div class="mission-card">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg" alt="NBBI community work" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:20px;">
+          <img src="images/gallery/gallery-03.jpeg" alt="Newborn Initiative community work" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:20px;">
           <div class="mission-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
@@ -214,6 +215,47 @@ export const home = {
           <div class="author-avatar">D</div>
           <div><div class="author-name">Diane W.</div><div class="author-role">St. Elizabeth Parish</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Where Proceeds Go ────────────────────────── -->
+<section class="proceeds">
+  <div class="container">
+    <div class="proceeds-header reveal">
+      <div class="section-label">Transparency</div>
+      <h2>Where do the <em>proceeds</em> go?</h2>
+      <p>Every donation directly supports families. No hidden costs — 100% of your giving reaches those who need it most.</p>
+    </div>
+    <div class="proceeds-grid">
+      <div class="proceeds-item reveal">
+        <div class="proceeds-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 1v6m0 6v6"/><path d="M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24"/><path d="M19.78 4.22l-4.24 4.24m-2.12 2.12l-4.24 4.24"/></svg>
+        </div>
+        <div class="proceeds-title">Diapers & Hygiene</div>
+        <div class="proceeds-text">Essential supplies for newborns and families to ensure clean, healthy care during infancy.</div>
+      </div>
+      <div class="proceeds-item reveal reveal-delay-1">
+        <div class="proceeds-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12M6 9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2M6 9v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9"/><path d="M10 5a2 2 0 0 1 4 0"/></svg>
+        </div>
+        <div class="proceeds-title">Child Care Supplies</div>
+        <div class="proceeds-text">Clothing, formula, medical essentials, and other items to support newborn growth and wellness.</div>
+      </div>
+      <div class="proceeds-item reveal reveal-delay-2">
+        <div class="proceeds-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l12 0M6 9l.5 11a2 2 0 0 0 2 1.85h6a2 2 0 0 0 2-1.85l.5-11M6 9l1-3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1l1 3"/><line x1="10" y1="5" x2="10" y2="2"/><line x1="14" y1="5" x2="14" y2="2"/></svg>
+        </div>
+        <div class="proceeds-title">Food & Nutrition</div>
+        <div class="proceeds-text">Meals and beverages for parents and caregivers, supporting their health as they care for newborns.</div>
+      </div>
+    </div>
+    <div class="proceeds-highlight reveal">
+      <div class="highlight-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+      <div class="highlight-content">
+        <div class="highlight-label">Direct Support</div>
+        <div class="highlight-amount">Each family receives up to <strong>65,000 JMD</strong> worth of <strong>baby supplies</strong>(<strong>$415 USD</strong>)</div>
       </div>
     </div>
   </div>

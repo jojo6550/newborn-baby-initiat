@@ -7,6 +7,7 @@ export const PAYPAL_CLIENT_ID = 'YOUR_CLIENT_ID';
 // Sandbox ID for testing: get from developer.paypal.com → Apps & Credentials → Sandbox tab
 // Live ID for production: get from developer.paypal.com → Apps & Credentials → Live tab
 
-export const TILOPAY_API_KEY = 'YOUR_TILOPAY_SDK_TOKEN';
-// Get your SDK token from: tilopay.com/developers → GetTokenSdk API call
-// This is the session token returned by the GetTokenSdk endpoint, NOT your admin password
+export const STRIPE_PAYMENT_LINK = 'YOUR_STRIPE_PAYMENT_LINK_URL';
+// Create at: dashboard.stripe.com → Payment Links → + New
+// Enable "Let customers decide what to pay" (custom amount)
+// Copy the full URL e.g. https://buy.stripe.com/xxxxxxxx
