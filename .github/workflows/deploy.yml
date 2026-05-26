@@ -24,7 +24,7 @@ jobs:
         with:
           args: >-
             --verbose --no-progress --timeout 10
-            --exclude-mail --exclude-external
+            --exclude-external
             index.html 404.html
           fail: true
         env:
@@ -35,7 +35,6 @@ jobs:
         with:
           args: >-
             --verbose --no-progress --timeout 10
-            --exclude-mail
             index.html 404.html
           fail: false
         env:
