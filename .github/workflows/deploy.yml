@@ -24,7 +24,7 @@ jobs:
         with:
           args: >-
             --verbose --no-progress --timeout 10
-            --exclude-external
+            --exclude 'https?://'
             index.html 404.html
           fail: true
         env:
