@@ -23,13 +23,18 @@ async function optimizeImages(imagesDir) {
   for (const file of files) {
     const ext = path.extname(file).toLowerCase();
     const tmp = file + '.tmp';
-    if (ext === '.jpg' || ext === '.jpeg') {
-      await sharp(file).jpeg({ quality: 85, progressive: true }).toFile(tmp);
-    } else {
-      await sharp(file).png({ compressionLevel: 9 }).toFile(tmp);
+    try {
+      if (ext === '.jpg' || ext === '.jpeg') {
+        await sharp(file).jpeg({ quality: 85, progressive: true }).toFile(tmp);
+      } else {
+        await sharp(file).png({ compressionLevel: 9 }).toFile(tmp);
+      }
+      fs.renameSync(tmp, file);
+      console.log(`  optimized: ${path.relative(process.cwd(), file)}`);
+    } catch (err) {
+      try { fs.unlinkSync(tmp); } catch (_) {}
+      throw err;
     }
-    fs.renameSync(tmp, file);
-    console.log(`  optimized: ${path.relative(process.cwd(), file)}`);
   }
   console.log('Done.');
 }
