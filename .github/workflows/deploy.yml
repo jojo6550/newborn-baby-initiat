@@ -25,7 +25,6 @@ jobs:
           args: >-
             --verbose --no-progress --timeout 10
             --exclude-mail --exclude-external
-            --exclude '^#' --exclude '^tel:'
             index.html 404.html
           fail: true
         env:
@@ -37,7 +36,6 @@ jobs:
           args: >-
             --verbose --no-progress --timeout 10
             --exclude-mail
-            --exclude '^#' --exclude '^tel:'
             index.html 404.html
           fail: false
         env:
@@ -72,6 +70,8 @@ jobs:
             --exclude='package.json' \
             --exclude='package-lock.json' \
             --exclude='lighthouserc.json' \
+            --exclude='.lycheeignore' \
+            --exclude='.htmlvalidate.json' \
             . _site/
 
       - name: Optimize images
