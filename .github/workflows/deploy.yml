@@ -1,0 +1,120 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── 1. VALIDATE ──────────────────────────────────────────────────────────────
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate HTML
+        run: npx --yes html-validate index.html 404.html
+
+      - name: Check internal links (hard fail)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose --no-progress --timeout 10
+            --exclude-mail --exclude-external
+            index.html 404.html
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check external links (warnings only)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose --no-progress --timeout 10
+            --exclude-mail
+            index.html 404.html
+          fail: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ── 2. BUILD ─────────────────────────────────────────────────────────────────
+  build:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Copy site to _site
+        run: |
+          rsync -av \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='.github' \
+            --exclude='.remember' \
+            --exclude='_site' \
+            --exclude='scripts' \
+            --exclude='docs' \
+            --exclude='hooks' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='lighthouserc.json' \
+            . _site/
+
+      - name: Optimize images
+        run: node scripts/optimize-images.js _site/images
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site/
+
+  # ── 3. LIGHTHOUSE ─────────────────────────────────────────────────────────────
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site/
+
+      - name: Install Lighthouse CI and http-server
+        run: npm install -g @lhci/cli http-server
+
+      - name: Run Lighthouse CI
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ── 4. DEPLOY ─────────────────────────────────────────────────────────────────
+  deploy:
+    needs: lighthouse
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
