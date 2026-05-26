@@ -1,12 +1,12 @@
 const galleryImages = [
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg',    caption: 'Delivering love and essentials',     label: 'St. Elizabeth'  },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM(1).jpeg', caption: 'Every family deserves support',      label: 'St. Elizabeth'   },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg',    caption: 'Care packages for new arrivals',     label: 'Manchester'  },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg',    caption: 'Building stronger communities',      label: 'Community'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.33%20PM.jpeg',    caption: 'From Clarendon with care',           label: 'Clarendon'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.37.07%20PM.jpeg',    caption: 'Giving to those in need',            label: 'Clarendon'     },
-  { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.37.07%20PM-1.jpeg',  caption: 'Supporting families in crisis',       label: 'Relief'       },
-  { src: 'images/gallery/WhatsApp%20Image%202026-05-01%20at%202.44.47%20PM.jpeg',    caption: 'Compassion in action',               label: 'Community Care'},
+  { src: 'images/gallery/gallery-01.jpeg', caption: 'Delivering love and essentials',  label: 'St. Elizabeth'  },
+  { src: 'images/gallery/gallery-02.jpeg', caption: 'Every family deserves support',   label: 'St. Elizabeth'  },
+  { src: 'images/gallery/gallery-03.jpeg', caption: 'Care packages for new arrivals',  label: 'Manchester'     },
+  { src: 'images/gallery/gallery-04.jpeg', caption: 'Building stronger communities',   label: 'Community'      },
+  { src: 'images/gallery/gallery-05.jpeg', caption: 'From Clarendon with care',        label: 'Clarendon'      },
+  { src: 'images/gallery/gallery-08.jpeg', caption: 'Giving to those in need',         label: 'Clarendon'      },
+  { src: 'images/gallery/gallery-09.jpeg', caption: 'Supporting families in crisis',   label: 'Relief'         },
+  { src: 'images/gallery/gallery-10.jpeg', caption: 'Compassion in action',            label: 'Community Care' },
 ];
 
 export const home = {
@@ -18,7 +18,7 @@ export const home = {
   <div class="hero-bg-blob hero-bg-blob-2"></div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow"><span></span> Newborn Baby Initiative</div>
+    <div class="hero-eyebrow"><span></span> Newborn Initiative</div>
     <h1>Give the Gift of a <em>Better</em> Life</h1>
     <p class="hero-sub">
       Supporting newborn babies and their families in Manchester, Clarendon, and St. Elizabeth, Jamaica —
@@ -56,7 +56,7 @@ export const home = {
     <div style="position:relative;">
       <div class="hero-card-main">
         <div class="hero-card-img">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.27%20PM.jpeg" alt="NBBI family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
+          <img src="images/gallery/gallery-01.jpeg" alt="Newborn Initiative family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
           <div class="hero-card-badge">New Arrivals</div>
         </div>
         <div class="hero-card-title">Welcome to NBBI</div>
@@ -120,7 +120,7 @@ export const home = {
       </div>
       <div class="mission-visual reveal reveal-delay-2">
         <div class="mission-card">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.28%20PM.jpeg" alt="NBBI community work" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:20px;">
+          <img src="images/gallery/gallery-03.jpeg" alt="Newborn Initiative community work" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:20px;">
           <div class="mission-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>

@@ -8,7 +8,7 @@ export const about = {
     </div>
     <h1>Nurturing Every <em>Beginning</em></h1>
     <p>
-      Founded in the heart of Central Jamaica, the Newborn Baby Initiative exists to ensure that no family faces the
+      Founded in the heart of Central Jamaica, the Newborn Initiative exists to ensure that no family faces the
       first days of their child's life without the essentials they need to thrive.
     </p>
   </div>
@@ -41,7 +41,7 @@ export const about = {
 
       <div class="mission-visual reveal reveal-delay-2">
         <div class="mission-card">
-          <img src="images/gallery/WhatsApp%20Image%202026-04-24%20at%203.35.31%20PM.jpeg" alt="NBBI team delivering care" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:28px;">
+          <img src="images/gallery/gallery-04.jpeg" alt="Newborn Initiative team delivering care" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:28px;">
           <div class="mission-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
