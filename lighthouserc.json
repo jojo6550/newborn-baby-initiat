@@ -1,13 +1,14 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "http-server _site -p 8080 --silent",
+      "startServerCommand": "http-server _site -p 8080",
       "startServerReadyPattern": "Available on",
+      "startServerReadyTimeout": 20000,
       "url": [
         "http://localhost:8080/",
         "http://localhost:8080/404.html"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {
