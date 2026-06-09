@@ -1,4 +1,4 @@
-# PayPal JS SDK Integration — NBBI
+# PayPal JS SDK Integration — NBI
 
 **Date:** 2026-04-24
 **Status:** Approved

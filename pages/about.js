@@ -6,7 +6,8 @@ export const about = {
     <div class="page-hero-eyebrow">
       <div class="section-label" style="justify-content:center;">Our Story</div>
     </div>
-    <h1>Nurturing Every <em>Beginning</em></h1>
+    <h1>Every Bundle Of <em>Joy Deserves A Blessed Start</em></h1>
+        
     <p>
       Founded in the heart of Central Jamaica, the Newborn Initiative exists to ensure that no family faces the
       first days of their child's life without the essentials they need to thrive.
@@ -46,14 +47,14 @@ export const about = {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
           <div class="mission-card-title">Founded with Purpose</div>
-          <div class="mission-card-text">NBBI was founded to address a real and urgent need — the lack of support for newborn families in Jamaica's rural and underserved communities.</div>
+          <div class="mission-card-text">NBI was founded to address a real and urgent need — the lack of support for newborn families in Jamaica's rural and underserved communities.</div>
         </div>
         <div class="mission-card">
           <div class="mission-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C47B55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <div class="mission-card-title">Operating Since Day One</div>
-          <div class="mission-card-text">From Manchester to Clarendon to St. Elizabeth, NBBI has been on the ground delivering care directly to the families who need it most.</div>
+          <div class="mission-card-text">From Manchester to Clarendon to St. Elizabeth, NBI has been on the ground delivering care directly to the families who need it most.</div>
         </div>
         <div class="mission-card">
           <div class="mission-card-icon" style="background:var(--sage-light);">

@@ -7,7 +7,7 @@ export const programs = {
       <div class="section-label" style="justify-content:center;">What We Do</div>
     </div>
     <h1>Programs That <em>Protect</em> Newborns</h1>
-    <p>From essential supplies to nurse referrals, every program NBBI runs is designed to give newborns and their families the strongest possible start.</p>
+    <p>From essential supplies to nurse referrals, every program NBI runs is designed to give newborns and their families the strongest possible start.</p>
   </div>
 </section>
 
@@ -35,7 +35,7 @@ export const programs = {
           color: '#BF9248',
           bg:    'var(--gold-light)',
           title: 'Community Outreach',
-          text:  'NBBI works through churches, community leaders, and local organisations to identify families who need support — ensuring no one is missed.',
+          text:  'NBI works through churches, community leaders, and local organisations to identify families who need support — ensuring no one is missed.',
         },
         {
           icon: `<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>`,

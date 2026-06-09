@@ -69,13 +69,13 @@ export async function initPaypalButtons(getAmount) {
       return actions.order.create({
         purchase_units: [{
           amount: { value: amount.toFixed(2), currency_code: 'USD' },
-          description: 'NBBI Donation'
+          description: 'NBI Donation'
         }]
       });
     },
     onApprove: (data, actions) => actions.order.capture()
       .then(() => {
-        sessionStorage.setItem('nbbi_donated', '1');
+        sessionStorage.setItem('NBI_donated', '1');
         window.location.hash = '/thank-you';
       })
       .catch(() => {

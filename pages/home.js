@@ -46,7 +46,7 @@ export const home = {
         <div class="stat-label">Goes to Families</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">NBBI</div>
+        <div class="stat-num">NBI</div>
         <div class="stat-label">Est. Central Jamaica</div>
       </div>
     </div>
@@ -59,7 +59,7 @@ export const home = {
           <img src="images/gallery/gallery-01.jpeg" alt="Newborn Initiative family receiving support in Jamaica" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager">
           <div class="hero-card-badge">New Arrivals</div>
         </div>
-        <div class="hero-card-title">Welcome to NBBI</div>
+        <div class="hero-card-title">Welcome to NBI</div>
         <div class="hero-card-text">A dedicated team offering wholesome service to new mothers, parents, and their newborn babies across Central Jamaica.</div>
         <div class="hero-card-tag">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
@@ -93,7 +93,7 @@ export const home = {
         <h2>Committed to every <em>newborn's</em> bright beginning</h2>
         <p class="mission-body">
           Jamaica faces significant challenges for newborns and their families. Thousands face difficulties ranging from a lack
-          of essential medical care and supplies to inadequate nutrition and unstable living conditions. NBBI seeks to address
+          of essential medical care and supplies to inadequate nutrition and unstable living conditions. NBI seeks to address
           these issues by providing critical resources to mothers and families during the first crucial months of a baby's life.
         </p>
         <ul class="mission-list">
@@ -150,7 +150,7 @@ export const home = {
 <section class="gallery-section">
   <div class="gallery-header reveal">
     <div class="section-label">Our Work</div>
-    <h2>See <em>NBBI</em> in action</h2>
+    <h2>See <em>NBI</em> in action</h2>
     <p>Real moments, real families, real impact — across Manchester, Clarendon, and St. Elizabeth.</p>
   </div>
   <div class="gallery-carousel-wrap reveal reveal-delay-1">
@@ -185,7 +185,7 @@ export const home = {
 
 <!-- ── Testimonials ──────────────────────────────── -->
 <section class="testimonials">
-  <div class="testimonials-bg">NBBI</div>
+  <div class="testimonials-bg">NBI</div>
   <div class="container">
     <div class="testimonials-header reveal">
       <div class="section-label" style="justify-content:center;">Voices</div>
@@ -194,7 +194,7 @@ export const home = {
     <div class="testimonials-grid">
       <div class="testimonial-card reveal reveal-delay-1">
         <div class="testimonial-stars">${'<div class="star"></div>'.repeat(5)}</div>
-        <div class="testimonial-quote">"NBBI gave us everything we needed when we had nothing. The diapers, formula, and love they showed us — I'll never forget it."</div>
+        <div class="testimonial-quote">"NBI gave us everything we needed when we had nothing. The diapers, formula, and love they showed us — I'll never forget it."</div>
         <div class="testimonial-author">
           <div class="author-avatar">M</div>
           <div><div class="author-name">Maria T.</div><div class="author-role">Manchester Parish</div></div>
@@ -202,7 +202,7 @@ export const home = {
       </div>
       <div class="testimonial-card reveal reveal-delay-2">
         <div class="testimonial-stars">${'<div class="star"></div>'.repeat(5)}</div>
-        <div class="testimonial-quote">"As a teenage mother, I felt alone. NBBI connected me to nurses, gave me supplies, and made me feel like my baby deserved a chance."</div>
+        <div class="testimonial-quote">"As a teenage mother, I felt alone. NBI connected me to nurses, gave me supplies, and made me feel like my baby deserved a chance."</div>
         <div class="testimonial-author">
           <div class="author-avatar">J</div>
           <div><div class="author-name">Janelle K.</div><div class="author-role">Clarendon Parish</div></div>
@@ -255,7 +255,6 @@ export const home = {
       <div class="highlight-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
       <div class="highlight-content">
         <div class="highlight-label">Direct Support</div>
-        <div class="highlight-amount">Each family receives up to <strong>65,000 JMD</strong> worth of <strong>baby supplies</strong>(<strong>$415 USD</strong>)</div>
       </div>
     </div>
   </div>

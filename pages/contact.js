@@ -19,7 +19,7 @@ export const contact = {
         <div class="section-label">Reach Us</div>
         <h2>Let's start a <em>conversation</em></h2>
         <p class="contact-info-text">
-          Interested in learning more about NBBI, wanting to contribute, or looking to refer a family?
+          Interested in learning more about NBI, wanting to contribute, or looking to refer a family?
           Reach out — we're here and we respond promptly.
         </p>
         <div class="contact-methods">
@@ -124,7 +124,7 @@ export const contact = {
       }
 
       // mailto: fallback — works without a server
-      const subject  = encodeURIComponent(`[NBBI Website] ${form.topic.value || 'Message'} from ${first} ${last}`);
+      const subject  = encodeURIComponent(`[NBI Website] ${form.topic.value || 'Message'} from ${first} ${last}`);
       const bodyText = encodeURIComponent(`Name: ${first} ${last}\nEmail: ${email}\n\n${body}`);
       window.location.href = `mailto:newbornbabyinitiative@gmail.com?subject=${subject}&body=${bodyText}`;
     });
