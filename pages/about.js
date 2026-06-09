@@ -14,7 +14,6 @@ export const about = {
     </p>
   </div>
 </section>
-
 <!-- ── Full Mission ──────────────────────────────── -->
 <section class="mission">
   <div class="container">
